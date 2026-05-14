@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doação de Costela · Paróquia Santa Edwiges</title>
+    <link rel="icon" href="img/img-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <img class="ims" src="img/img-logo.png" alt="" />
+        </div>
+        <h1>Paróquia Santa Edwiges</h1>
+        <p class="subtitle festival">Festa Padroeira 2026</p>
+        <p class="subtitle">Doação de Costela</p>
+        <p class="description">
+          Preencha o formulário abaixo para registrar sua doação
+        </p>
+      </div>
+
+      <div class="form-card">
+        <form id="donationForm">
+          <div class="form-group">
+            <label>Nome <span class="required">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Seu nome completo"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Telefone <span class="required">*</span></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              placeholder="(00) 00000-0000"
+              maxlength="15"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Comunidade <span class="required">*</span></label>
+            <select id="community" name="community" required>
+              <option value="" selected>Selecione sua comunidade...</option>
+              <option value="Comunidade Matriz">Comunidade Matriz</option>
+              <option value="Comunidade Santa Helena">
+                Comunidade Santa Helena
+              </option>
+              <option value="Comunidade Aparecida">Comunidade Aparecida</option>
+              <option value="Comunidade Espirito Santo">
+                Comunidade Espirito Santo
+              </option>
+              <option value="Comunidade São Roque">Comunidade São Roque</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Valor Doado (R$) <span class="required">*</span></label>
+            <div class="relative">
+              <span class="currency-symbol">R$</span>
+              <input
+                type="text"
+                id="amount"
+                name="amount"
+                required
+                value="150,00"
+                readonly
+                class="amount-input"
+              />
+            </div>
+            <div class="field-hint">Valor fixo da costela</div>
+          </div>
+
+          <div class="form-group">
+            <label>Forma de Pagamento <span class="required">*</span></label>
+            <div class="">
+              <label class="radio-label">
+                <input type="radio" name="payment" value="pix" required /> PIX
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Chave PIX</label>
+            <div class="pix-card">
+              <div class="pix-key-wrapper">
+                <div class="pix-key-container">
+                  <code class="pix-key" id="pixKey">875.402.319-04</code>
+                  <button type="button" class="btn-copy" id="copyPixBtn">
+                    <svg
+                      class="copy-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect
+                        x="9"
+                        y="9"
+                        width="13"
+                        height="13"
+                        rx="2"
+                        ry="2"
+                      ></rect>
+                      <path
+                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                      ></path>
+                    </svg>
+                    <span class="btn-text">Copiar</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label
+              >Comprovante de Pagamento <span class="required">*</span></label
+            >
+            <label class="file-upload">
+              <input
+                type="file"
+                id="comprovante"
+                name="comprovante"
+                accept="image/*"
+              />
+              Clique para anexar comprovante
+            </label>
+            <div id="previewArea"></div>
+            <div class="field-hint">Formatos aceitos: JPG, PNG (máx. 5MB)</div>
+          </div>
+
+          <button type="submit" id="submitBtn">Registrar Doação</button>
+
+          <!-- Área de mensagens com espaçamento de 20px -->
+          <div id="messageArea" class="message-area"></div>
+        </form>
+      </div>
+
+      <div class="footer">
+        Paróquia Santa Edwiges · Que Deus abençoe a todos
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
