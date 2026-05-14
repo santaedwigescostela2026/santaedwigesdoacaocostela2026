@@ -214,7 +214,7 @@ if (form) {
         const result = JSON.parse(textResponse);
         if (result.status === "success") {
           showMessage(
-            "Doação registrada com sucesso. O comprovante foi salvo.",
+            "Doação registrada com sucesso.",
             "success",
           );
           form.reset();
